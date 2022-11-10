@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="https://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+  <_locDefault _loc="locNone" />
+  <_locTag _loc="locData">Title</_locTag>
+  <_locTag _loc="locData">Description</_locTag>
+  <_locTag _loc="locData">Author</_locTag>
+  <_locTag _loc="locData">ToolTip</_locTag>
+  <_locTag _loc="locData">Default</_locTag>
+</_locDefinition>
+<CodeSnippet Format="1.0.0">
+<Header>
+  <Title>Example2</Title>
+  <Shortcut></Shortcut>
+  <Description>Example2 snippet description.</Description>
+  <Author>Author Name</Author>
+  <SnippetTypes>
+    <SnippetType>Expansion</SnippetType>  <!--SurroundsWith or Expansion-->
+  </SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+
+            <Literal>
+                <ID>TempTable</ID>
+                <ToolTip>Temporary table to delete</ToolTip>
+                <Default>Temp Table</Default>
+            </Literal>
+        
+</Declarations>
+<Code Language="SQL"><![CDATA[
+IF OBJECT_ID('tempdb..#$TempTable$') IS NOT NULL
+	BEGIN
+	   DROP TABLE #$TempTable$;
+  END;
+
+SELECT * INTO #$TempTable$ FROM (
+
+) AS $TempTable$;
+]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>

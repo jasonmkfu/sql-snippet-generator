@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="https://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+  <_locDefault _loc="locNone" />
+  <_locTag _loc="locData">Title</_locTag>
+  <_locTag _loc="locData">Description</_locTag>
+  <_locTag _loc="locData">Author</_locTag>
+  <_locTag _loc="locData">ToolTip</_locTag>
+  <_locTag _loc="locData">Default</_locTag>
+</_locDefinition>
+<CodeSnippet Format="1.0.0">
+<Header>
+  <Title>Example1</Title>
+  <Shortcut></Shortcut>
+  <Description>Example1 snippet description</Description>
+  <Author>Author Name</Author>
+  <SnippetTypes>
+    <SnippetType>Expansion</SnippetType>  <!--SurroundsWith or Expansion-->
+  </SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+
+            <Literal>
+                <ID>Parameter 1</ID>
+                <ToolTip>Parameter 1 Tip</ToolTip>
+                <Default>InsertParameter1</Default>
+            </Literal>
+        
+            <Literal>
+                <ID>Parameter 2</ID>
+                <ToolTip>Parameter 2 Tip</ToolTip>
+                <Default>InsertParameter2</Default>
+            </Literal>
+        
+</Declarations>
+<Code Language="SQL"><![CDATA[
+SELECT *
+FROM $Parameter 1$
+WHERE
+    X = $Parameter 2$
+]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>
