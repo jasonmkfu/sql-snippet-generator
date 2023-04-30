@@ -1,0 +1,26 @@
+{
+    "name": "YourExtensionNameHereNoSpaces",
+    "displayName": "Your Extension Display Name Here",
+    "description": "SQL Snippet Extension",
+    "publisher": "Your Name Here",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.64.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jasonmkfu/sql-snippet-generator"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "icon": "./VS Code/logo.png",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "sql",
+                "path": "./VS Code/Generator Output/tsql-snippets.json"
+            }
+        ]
+    }
+}

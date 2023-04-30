@@ -1,0 +1,4 @@
+, ROW_NUMBER() OVER (
+    PARTITION BY {1}
+    ORDER BY {2} ASC
+)

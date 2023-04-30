@@ -10,10 +10,10 @@
 </_locDefinition>
 <CodeSnippet Format="1.0.0">
 <Header>
-  <Title>Example1</Title>
+  <Title>TemporaryTable</Title>
   <Shortcut></Shortcut>
-  <Description>Example1 snippet description</Description>
-  <Author>Author Name</Author>
+  <Description>Pattern to drop and create a temporary table.</Description>
+  <Author>SQL Snippets</Author>
   <SnippetTypes>
     <SnippetType>Expansion</SnippetType>  <!--SurroundsWith or Expansion-->
   </SnippetTypes>
@@ -22,23 +22,33 @@
 <Declarations>
 
             <Literal>
-                <ID>Parameter 1</ID>
-                <ToolTip>Parameter 1 Tip</ToolTip>
-                <Default>InsertParameter1</Default>
+                <ID>PartitionFieldNM</ID>
+                <ToolTip>The field you with to partition</ToolTip>
+                <Default>FieldName</Default>
             </Literal>
         
             <Literal>
-                <ID>Parameter 2</ID>
-                <ToolTip>Parameter 2 Tip</ToolTip>
-                <Default>InsertParameter2</Default>
+                <ID>OrderFieldNM</ID>
+                <ToolTip>The field you wish to order the numbering</ToolTip>
+                <Default>FieldName</Default>
+            </Literal>
+        
+            <Literal>
+                <ID>TempTable</ID>
+                <ToolTip>Temporary table to delete</ToolTip>
+                <Default>Temp Table</Default>
             </Literal>
         
 </Declarations>
 <Code Language="SQL"><![CDATA[
-SELECT *
-FROM $Parameter 1$
-WHERE
-    X = $Parameter 2$
+IF OBJECT_ID('tempdb..#$TempTable$') IS NOT NULL
+    BEGIN
+       DROP TABLE #$TempTable$;
+    END;
+
+SELECT * INTO #$TempTable$ FROM (
+
+) AS $TempTable$;
 ]]>
 </Code>
 </Snippet>
